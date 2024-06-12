@@ -4,7 +4,7 @@
   "description": "This app or website is create to store village survey in mongodb using HTML, CSS, JS, NodeJS, ExpressJS, MongoDB, EJS etc.",
   "main": "app.js",
   "engines": {
-    "node": "14.x*"
+    "node": "18.17.1"
   },
   "scripts": {
     "dev": "nodemon app.js",
