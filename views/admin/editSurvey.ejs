@@ -1,0 +1,126 @@
+<!-- <%- include("../layouts/header.ejs") %>
+<%- include("../layouts/nav.ejs") %>
+
+<h1
+  class="display-1 col-10 mx-auto mt-1 mb-3 pb-2 text-decoration-underline bg-warning rounded-bottom text-center"
+>
+  Survey of Family
+</h1>
+
+<table
+  class="col-10 table table-hover table-dark table-striped-columns text-white table-bordered border-danger text-center"
+>
+  <thead class="table-dark border-2 border-danger">
+    <tr>
+      <th scope="col">Sr.No.</th>
+      <th scope="col">Beneficiary Name</th>
+      <th scope="col">Age</th>
+      <th scope="col">Gender</th>
+      <th scope="col">Relation with Owner</th>
+      <th scope="col">Mobile No.</th>
+      <th scope="col">Abha ID</th>
+      <th scope="col">Ayushman ID</th>
+      <th scope="col">Action</th>
+    </tr>
+  </thead>
+  <tbody>
+    <% var i = 1; %> <% data.forEach((item) => { %>
+    <tr>
+      <th scope="row"><%= i++ %></th>
+      <td class="text-start text-capitalize"><%= item.fullName %></td>
+      <td><%= item.age %></td>
+      <td><%= item.gender %></td>
+      <td><%= item.relation %></td>
+      <td><%= item.mobileNo %></td>
+      <td><%= item.abha %></td>
+      <td><%= item.ayushman %></td>
+      <td style="display: flex; justify-content: space-evenly;">
+        <form action="/admin/adminData/edit/<%= item._id %>" method="get">
+          <button type="submit">Edit</button>
+        </form>
+        <form action="/admin/adminData/delete/<%= item._id %>" method="post">
+          <button type="submit">Delete</button>
+        </form>
+      </td>
+    </tr>
+    <% }) %>
+  </tbody>
+</table>
+
+<a
+  style="font-size: 2rem"
+  class="icon-link text-success-emphasis ms-3 text-decoration-none"
+  href="/admin/adminData"
+>
+  <svg
+    xmlns="http://www.w3.org/2000/svg"
+    width="16"
+    height="16"
+    fill="currentColor"
+    class="bi bi-arrow-left"
+    viewBox="0 0 16 16"
+  >
+    <path
+      fill-rule="evenodd"
+      d="M15 8a.5.5 0 0 0-.5-.5H2.707l3.147-3.146a.5.5 0 1 0-.708-.708l-4 4a.5.5 0 0 0 0 .708l4 4a.5.5 0 0 0 .708-.708L2.707 8.5H14.5A.5.5 0 0 0 15 8z"
+    />
+  </svg>
+  Back
+</a>
+
+<%- include("../layouts/footer.ejs") %> -->
+
+
+<%- include("../layouts/header.ejs") %>
+<%- include("../layouts/nav.ejs") %>
+
+<h1 class="display-1 mt-5 mb-3 text-center bg-warning rounded-bottom">Survey of Family</h1>
+
+<div class="container">
+  <table class="table table-hover table-dark table-striped text-white table-bordered border-danger text-center">
+    <thead class="table-dark border-2 border-danger">
+      <tr>
+        <th scope="col">Sr.No.</th>
+        <th scope="col">Beneficiary Name</th>
+        <th scope="col">Age</th>
+        <th scope="col">Gender</th>
+        <th scope="col">Relation with Owner</th>
+        <th scope="col">Mobile No.</th>
+        <th scope="col">Abha ID</th>
+        <th scope="col">Ayushman ID</th>
+        <th scope="col">Action</th>
+      </tr>
+    </thead>
+    <tbody>
+      <% var i = 1; %> <% data.forEach((item) => { %>
+      <tr>
+        <th scope="row"><%= i++ %></th>
+        <td class="text-start text-capitalize"><%= item.fullName %></td>
+        <td><%= item.age %></td>
+        <td><%= item.gender %></td>
+        <td><%= item.relation %></td>
+        <td><%= item.mobileNo %></td>
+        <td><%= item.abha %></td>
+        <td><%= item.ayushman %></td>
+        <td class="d-flex justify-content-evenly">
+          <form action="/admin/adminData/edit/<%= item._id %>" method="get">
+            <button type="submit" class="btn btn-primary">Edit</button>
+          </form>
+          <form action="/admin/adminData/delete/<%= item._id %>" method="post">
+            <button type="submit" class="btn btn-danger">Delete</button>
+          </form>
+        </td>
+      </tr>
+      <% }) %>
+    </tbody>
+  </table>
+</div>
+
+<a class="icon-link text-success ms-3 text-decoration-none" href="/admin/adminData">
+  <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-arrow-left" viewBox="0 0 16 16">
+    <path fill-rule="evenodd" d="M15 8a.5.5 0 0 0-.5-.5H2.707l3.147-3.146a.5.5 0 1 0-.708-.708l-4 4a.5.5 0 0 0 0 .708l4 4a.5.5 0 0 0 .708-.708L2.707 8.5H14.5A.5.5 0 0 0 15 8z"/>
+  </svg>
+  Back
+</a>
+
+<%- include("../layouts/footer.ejs") %>

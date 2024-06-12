@@ -1,0 +1,54 @@
+<!-- <%- include("../layouts/header.ejs") %>
+
+<h1>Email Verification</h1>
+
+<% if(typeof message2 !== 'undefined') { %>
+<h4 style="color: red"><%= message2 %></h4>
+<% } %>
+
+<form action="" method="post">
+  <input type="email" name="email" placeholder="Enter Email" required />
+  <br /><br />
+  <input type="submit" value="Send Verification Link" />
+</form>
+
+<% if(typeof message1 !== 'undefined') { %>
+<h4 style="color: green"><%= message1 %></h4>
+<% } %>
+
+<%- include("../layouts/footer.ejs") %> -->
+
+
+<%- include("../layouts/header.ejs") %>
+
+<div class="container mt-5">
+  <h1 class="text-center">Email Verification</h1>
+  <div class="row justify-content-center mt-5">
+    <div class="col-md-6">
+      <% if(typeof message2 !== 'undefined') { %>
+        <h4 class="text-danger"><%= message2 %></h4>
+      <% } %>
+
+      <form action="" method="post">
+        <div class="form-group">
+          <label for="email">Email:</label>
+          <input
+            type="email"
+            class="form-control"
+            id="email"
+            name="email"
+            placeholder="Enter Email"
+            required
+          />
+        </div>
+        <button type="submit" class="btn btn-primary">Send Verification Link</button>
+      </form>
+
+      <% if(typeof message1 !== 'undefined') { %>
+        <h4 class="text-success mt-3"><%= message1 %></h4>
+      <% } %>
+    </div>
+  </div>
+</div>
+
+<%- include("../layouts/footer.ejs") %>

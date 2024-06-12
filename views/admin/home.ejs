@@ -1,0 +1,69 @@
+<!-- <%- include("../layouts/header.ejs") %>
+<%- include("../layouts/nav.ejs") %>
+
+<h1>Welcome, <%= user.name %></h1>
+<a href="/admin/dashboard">Dashboard</a>
+<br>
+<br />
+<img src="/userImages/<%= user.image %>" width="100px" height="100px" alt=<%= user.image %>"">
+<br><br>
+<table>
+    <tr>
+        <th>Email: </th>
+        <td><%= user.email %></td>
+    </tr>
+    <tr>
+        <th>Mobile: </th>
+        <td><%= user.mobile %></td>
+    </tr>
+</table>
+<br>
+<a href="/admin/edit?id=<%= user._id %>">Edit</a>
+<br>
+<a href="/admin/logout">Logout</a>
+
+<%- include("../layouts/footer.ejs") %> -->
+
+
+<%- include("../layouts/header.ejs") %>
+<%- include("../layouts/nav.ejs") %>
+
+<div class="container mt-5">
+  <h1 class="text-center">Welcome, <%= user.name %></h1>
+  <div class="row justify-content-center mt-3">
+    <div class="col-md-6">
+      <a href="/admin/dashboard" class="btn btn-primary">Dashboard</a>
+    </div>
+  </div>
+  <div class="row justify-content-center mt-4">
+    <div class="col-md-3">
+      <img src="/userImages/<%= user.image %>" class="img-fluid" alt="<%= user.image %>" width="100" height="100">
+    </div>
+  </div>
+  <div class="row justify-content-center mt-4">
+    <div class="col-md-6">
+      <table class="table">
+        <tr>
+          <th>Email:</th>
+          <td><%= user.email %></td>
+        </tr>
+        <tr>
+          <th>Mobile:</th>
+          <td><%= user.mobile %></td>
+        </tr>
+      </table>
+    </div>
+  </div>
+  <div class="row justify-content-center mt-4">
+    <div class="col-md-6">
+      <a href="/admin/edit?id=<%= user._id %>" class="btn btn-primary">Edit</a>
+    </div>
+  </div>
+  <div class="row justify-content-center mt-4">
+    <div class="col-md-6">
+      <a href="/admin/logout" class="btn btn-danger">Logout</a>
+    </div>
+  </div>
+</div>
+
+<%- include("../layouts/footer.ejs") %>

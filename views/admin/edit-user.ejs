@@ -1,0 +1,56 @@
+<!-- <%- include("../layouts/header.ejs") %>
+
+<h1>Update Profile</h1>
+<br /><br />
+    
+        <td><img src="/userImages/<%= user.image %>" width="100px" height="120px" alt="<%= user.image %>"></td>
+    
+        <form action="/admin/edit-user?id=<%= user._id %>" method="post" enctype="multipart/form-data">
+            <input type="hidden" name="user_id" value="<%= user._id %>">
+            <input type="file" name="image">
+            <br><br>
+            <input type="text" name="name" value="<%= user.name %>" placeholder="Enter Name" required>
+            <br><br>
+            <input type="email" name="email" value="<%= user.email %>" placeholder="Enter Email" required>
+            <br><br>
+            <input type="text" name="mno" value="<%= user.mobile %>" placeholder="Enter Mobile" required>
+            <br><br>
+            <input type="submit" value="Update user">
+        </form>
+        
+<a href="/admin/dashboard">Cancel</a>
+
+<%- include("../layouts/footer.ejs") %> -->
+
+
+<%- include("../layouts/header.ejs") %>
+
+<div class="container mt-5">
+  <h1 class="text-center">Update Profile</h1>
+  <div class="row justify-content-center mt-4">
+    <div class="col-md-6">
+      <img src="/userImages/<%= user.image %>" alt="<%= user.image %>" width="100" height="120" class="img-fluid">
+      <form action="/admin/edit-user?id=<%= user._id %>" method="post" enctype="multipart/form-data">
+        <div class="form-group">
+          <input type="file" name="image" class="form-control-file">
+        </div>
+        <div class="form-group">
+          <label for="name">Name:</label>
+          <input type="text" name="name" value="<%= user.name %>" placeholder="Enter Name" class="form-control" required>
+        </div>
+        <div class="form-group">
+          <label for="email">Email:</label>
+          <input type="email" name="email" value="<%= user.email %>" placeholder="Enter Email" class="form-control" required>
+        </div>
+        <div class="form-group">
+          <label for="mno">Mobile:</label>
+          <input type="text" name="mno" value="<%= user.mobile %>" placeholder="Enter Mobile" class="form-control" required>
+        </div>
+        <button type="submit" class="btn btn-primary">Update User</button>
+      </form>
+      <a href="/admin/dashboard" class="btn btn-secondary mt-3">Cancel</a>
+    </div>
+  </div>
+</div>
+
+<%- include("../layouts/footer.ejs") %>

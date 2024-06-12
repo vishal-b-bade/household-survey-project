@@ -1,0 +1,47 @@
+<!-- <%- include("../layouts/header.ejs") %>
+
+<h1>Update Profile</h1>
+<br /><br />
+    
+        <td><img src="/userImages/<%= user.image %>" width="100px" height="120px" alt="<%= user.image %>"></td>
+    
+        <form action="/user/edit" method="post" enctype="multipart/form-data">
+            <input type="hidden" name="user_id" value="<%= user._id %>">
+            <br><br>
+            <input type="text" name="name" value="<%= user.name %>" placeholder="Enter Name" required>
+            <br><br>
+            <input type="text" name="mno" value="<%= user.mobile %>" placeholder="Enter Mobile" required>
+            <br><br>
+            <input type="submit" value="Update">
+        </form>
+        
+<a href="/user/home">Cancel</a>
+
+<%- include("../layouts/footer.ejs") %> -->
+
+
+<%- include("../layouts/header.ejs") %>
+
+<div class="container mt-5">
+  <h1 class="text-center">Update Profile</h1>
+  <div class="row justify-content-center mt-4">
+    <div class="col-md-6">
+      <img src="/userImages/<%= user.image %>" alt="<%= user.image %>" width="100" height="120" class="img-fluid">
+      <form action="/user/edit" method="post" enctype="multipart/form-data">
+        <input type="hidden" name="user_id" value="<%= user._id %>">
+        <div class="form-group">
+          <label for="name">Name:</label>
+          <input type="text" name="name" value="<%= user.name %>" placeholder="Enter Name" class="form-control" required>
+        </div>
+        <div class="form-group">
+          <label for="mno">Mobile:</label>
+          <input type="text" name="mno" value="<%= user.mobile %>" placeholder="Enter Mobile" class="form-control" required>
+        </div>
+        <button type="submit" class="btn btn-primary">Update</button>
+      </form>
+      <a href="/user/home" class="btn btn-secondary mt-3">Cancel</a>
+    </div>
+  </div>
+</div>
+
+<%- include("../layouts/footer.ejs") %>

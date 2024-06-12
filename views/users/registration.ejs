@@ -1,0 +1,68 @@
+<!-- <%- include("../layouts/header.ejs") %>
+
+<h1>User Registration Form</h1>
+
+<form action="" method="post" enctype="multipart/form-data">
+    <input type="text" name="name" placeholder="Enter Name" required>
+    <br><br>
+    <input type="email" name="email" placeholder="Enter Email" required>
+    <br><br>
+    <input type="text" name="mno" placeholder="Enter Mobile" required>
+    <br><br>
+    <input type="file" name="image" required>
+    <br><br>
+    <input type="password" name="password" placeholder="Enter Password" required>
+    <br><br>
+    <input type="submit" value="Register">
+</form>
+
+<% if(typeof message1  !== 'undefined') { %>
+    <p style="color: green;"><%= message1 %></p>
+<% } %>
+
+<% if(typeof message2  !== 'undefined') { %>
+    <p style="color: red;"><%= message2 %></p>
+<% } %>
+
+<%- include("../layouts/footer.ejs") %> -->
+
+<%- include("../layouts/header.ejs") %>
+
+<div class="container mt-5">
+  <div class="row justify-content-center">
+    <div class="col-md-6">
+      <h1 class="text-center mb-4">User Registration Form</h1>
+      <form action="" method="post" enctype="multipart/form-data">
+        <div class="form-group">
+          <label for="name">Name</label>
+          <input type="text" class="form-control" id="name" name="name" placeholder="Enter Name" required>
+        </div>
+        <div class="form-group">
+          <label for="email">Email</label>
+          <input type="email" class="form-control" id="email" name="email" placeholder="Enter Email" required>
+        </div>
+        <div class="form-group">
+          <label for="mno">Mobile Number</label>
+          <input type="text" class="form-control" id="mno" name="mno" placeholder="Enter Mobile Number" required>
+        </div>
+        <div class="form-group">
+          <label for="image">Upload Image</label>
+          <input type="file" class="form-control-file" id="image" name="image" required>
+        </div>
+        <div class="form-group">
+          <label for="password">Password</label>
+          <input type="password" class="form-control" id="password" name="password" placeholder="Enter Password" required>
+        </div>
+        <button type="submit" class="btn btn-primary">Register</button>
+      </form>
+      <% if(typeof message1  !== 'undefined') { %>
+        <p class="text-success mt-3"><%= message1 %></p>
+      <% } %>
+      <% if(typeof message2  !== 'undefined') { %>
+        <p class="text-danger mt-3"><%= message2 %></p>
+      <% } %>
+    </div>
+  </div>
+</div>
+
+<%- include("../layouts/footer.ejs") %>

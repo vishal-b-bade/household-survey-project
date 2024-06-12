@@ -1,0 +1,88 @@
+<!-- <%- include("../layouts/header.ejs") %> <%- include("../layouts/navbar.ejs") %>
+
+<h1>Welcome, <%= user.name %></h1>
+<br /><br />
+<table>
+  <tr>
+    <td>
+      <img
+        src="/userImages/<%= user.image %>"
+        width="100px"
+        height="120px"
+        alt="<%= user.image %>"
+      />
+      <a
+        href="/user/edit-image?id=<%= user._id %>"
+        style="text-decoration: none"
+        title="edit image"
+        >✏️</a
+      >
+    </td>
+  </tr>
+  <tr>
+    <td>Email</td>
+    <td><%= user.email %></td>
+  </tr>
+  <tr>
+    <td>Mobile</td>
+    <td><%= user.mobile %></td>
+  </tr>
+  <tr>
+    <td>Is Verified?</td>
+    <td>
+      <% if(user.is_verified === 1) { %> true <% } else { %> false <% } %>
+    </td>
+  </tr>
+</table>
+<a href="/user/edit?id=<%= user._id %>">Edit</a>
+<br />
+<a href="/user/logout">Logout</a>
+
+<%- include("../layouts/footer.ejs") %> -->
+
+
+<%- include("../layouts/header.ejs") %> 
+<%- include("../layouts/navbar.ejs") %>
+
+<div class="container mt-5">
+  <h1 class="text-center">Welcome, <%= user.name %></h1>
+  <div class="row justify-content-center mt-4">
+    <div class="col-md-6">
+      <table class="table">
+        <tr>
+          <td>
+            <img src="/userImages/<%= user.image %>" width="100px" height="120px" alt="<%= user.image %>"/>
+            <a href="/user/edit-image?id=<%= user._id %>" style="text-decoration: none" title="edit image">✏️</a>
+          </td>
+        </tr>
+        <tr>
+          <td>Email</td>
+          <td><%= user.email %></td>
+        </tr>
+        <tr>
+          <td>Mobile</td>
+          <td><%= user.mobile %></td>
+        </tr>
+        <tr>
+          <td>Is Verified?</td>
+          <td>
+            <% if(user.is_verified === 1) { %>
+              true
+            <% } else { %>
+              false
+            <% } %>
+          </td>
+        </tr>
+      </table>
+    </div>
+  </div>
+  <div class="row justify-content-center">
+    <div class="col-md-6">
+      <a href="/user/edit?id=<%= user._id %>" class="btn btn-primary">Edit</a>
+      <br />
+      <a href="/user/logout" class="btn btn-danger mt-3">Logout</a>
+    </div>
+  </div>
+</div>
+
+<%- include("../layouts/footer.ejs") %>

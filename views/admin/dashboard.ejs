@@ -1,0 +1,123 @@
+<!-- <%- include("../layouts/header.ejs") %>
+
+<h1>User List</h1>
+
+<a href="/admin/add-user">Add User</a>
+<a href="/admin/export-user">Export Users</a>
+<br /><br />
+
+<table style="width: 90%">
+  <thead>
+    <tr>
+      <th>Sr.No.</th>
+      <th>Name</th>
+      <th>Email ID</th>
+      <th>Mobile No.</th>
+      <th>Image</th>
+      <th>Verified</th>
+      <th>Action</th>
+    </tr>
+  </thead>
+  <tbody style="text-align: center">
+    <% i = 1; %> <% user.forEach((user) => { %>
+    <tr>
+      <td><%= i++ %></td>
+      <td><%= user.name %></td>
+      <td><%= user.email %></td>
+      <td><%= user.mobile %></td>
+      <td>
+        <img
+          src="/userImages/<%= user.image %>"
+          alt="<%= user.image %>"
+          width="100px"
+          height="100px"
+        />
+      </td>
+      <td>
+        <% if(user.is_verified === 0) { %>
+        <p>Not Verified</p>
+        <% } else { %>
+        <p>Verified</p>
+        <% } %>
+      </td>
+      <td>
+        <a href="/admin/edit-user?id=<%= user._id %>">Edit</a><br /><a
+          href="/admin/delete-user?id=<%= user._id %>"
+          >Delete</a
+        >
+      </td>
+    </tr>
+    <% }) %>
+  </tbody>
+</table>
+
+<a href="/admin/home">Go to Home</a>
+
+<%- include("../layouts/footer.ejs") %> -->
+
+
+<%- include("../layouts/header.ejs") %>
+
+<div class="container mt-5">
+  <h1 class="text-center">User List</h1>
+  <div class="row justify-content-center mt-3">
+    <div class="col-md-6">
+      <a href="/admin/add-user" class="btn btn-primary me-3">Add User</a>
+      <a href="/admin/export-user" class="btn btn-primary">Export Users</a>
+    </div>
+  </div>
+  <div class="row justify-content-center mt-4">
+    <div class="col-md-10">
+      <table class="table">
+        <thead>
+          <tr>
+            <th>Sr.No.</th>
+            <th>Name</th>
+            <th>Email ID</th>
+            <th>Mobile No.</th>
+            <th>Image</th>
+            <th>Verified</th>
+            <th>Action</th>
+          </tr>
+        </thead>
+        <tbody>
+          <% i = 1; %> <% user.forEach((user) => { %>
+          <tr>
+            <td><%= i++ %></td>
+            <td><%= user.name %></td>
+            <td><%= user.email %></td>
+            <td><%= user.mobile %></td>
+            <td>
+              <img
+                src="/userImages/<%= user.image %>"
+                alt="<%= user.image %>"
+                width="100"
+                height="100"
+                class="img-fluid"
+              />
+            </td>
+            <td>
+              <% if(user.is_verified === 0) { %>
+              <p>Not Verified</p>
+              <% } else { %>
+              <p>Verified</p>
+              <% } %>
+            </td>
+            <td>
+              <a href="/admin/edit-user?id=<%= user._id %>" class="btn btn-primary me-2">Edit</a>
+              <a href="/admin/delete-user?id=<%= user._id %>" class="btn btn-danger">Delete</a>
+            </td>
+          </tr>
+          <% }) %>
+        </tbody>
+      </table>
+    </div>
+  </div>
+  <div class="row justify-content-center mt-4">
+    <div class="col-md-6">
+      <a href="/admin/home" class="btn btn-primary">Go to Home</a>
+    </div>
+  </div>
+</div>
+
+<%- include("../layouts/footer.ejs") %>

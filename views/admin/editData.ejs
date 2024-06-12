@@ -1,0 +1,170 @@
+<!-- <%- include("../layouts/header.ejs") %>
+<%- include("../layouts/nav.ejs") %>
+
+<h1
+  class="display-1 col-10 mx-auto mt-1 mb-3 pb-2 text-decoration-underline bg-warning rounded-bottom text-center"
+>
+  Survey - 2023 ( Panegaon )
+</h1>
+
+<div class="d-flex justify-content-evenly align-items-end">
+  <h1 class="text-info">Number of Houses : <%= house %></h1>
+
+  <form class="col-3 d-flex m-5 mb-3">
+    <input
+      class="form-control me-2"
+      type="text"
+      placeholder="Search"
+      aria-label="Search"
+      name="search"
+    />
+    <button class="btn btn-success" type="submit">Search</button>
+  </form>
+</div>
+
+<form>
+  <table
+    class="col-10 table table-hover table-dark table-striped-columns text-white table-bordered border-danger text-center"
+  >
+    <thead class="table-dark border-2 border-danger">
+      <% var i = 1; %>
+      <tr>
+        <th scope="col">Family ID.</th>
+        <th scope="col">Sr.No.</th>
+        <th scope="col">Head of Family</th>
+        <th scope="col">Age</th>
+        <th scope="col">Gender</th>
+        <th scope="col">Mobile No.</th>
+        <th scope="col">Action</th>
+      </tr>
+    </thead>
+    <tbody>
+      <% result.forEach((item) => { %>
+      <tr>
+        <th scope="row"><%= item.familyId %></th>
+        <th scope="row"><%= i++ %></th>
+        <td class="text-start">
+          <a
+            href="/admin/editSurvey/<%= item.familyId %>"
+            class="text-decoration-none text-white pointer-event text-capitalize"
+            ><%= item.fullName %></a
+          >
+        </td>
+        <td><%= item.age %></td>
+        <td><%= item.gender %></td>
+        <td><%= item.mobileNo %></td>
+        <td>
+          <a href="/admin/editSurvey/<%= item.familyId %>">Edit</a>
+        </td>
+      </tr>
+      <% }) %>
+      <tr>
+        <td colspan="2" class="bg-transparent"></td>
+        <th colspan="2" class="border-3 border-primary">
+          Total Populations : <span class="p-2"><%= count %></span>
+        </th>
+        <td class="bg-transparent"></td>
+      </tr>
+    </tbody>
+  </table>
+</form>
+
+<div class="bg-black pb-1 w-50 mx-auto rounded-5">
+  <a href="/admin/form" class="text-decoration-none">
+    <h1
+      style="
+        color: rgb(0, 255, 106);
+        margin-top: 10vh;
+        font-size: 6rem;
+        width: 100%;
+        height: 10vh;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        cursor: pointer;
+      "
+    >
+      Add Data
+    </h1>
+    <p
+      style="
+        color: rgb(0, 255, 106);
+        font-size: 10rem;
+        width: 100%;
+        height: 15vh;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+      "
+    >
+      +
+    </p>
+  </a>
+</div>
+
+<%- include("../layouts/footer.ejs") %> -->
+
+
+<%- include("../layouts/header.ejs") %>
+<%- include("../layouts/nav.ejs") %>
+
+<h1 class="display-1 mt-5 mb-3 text-decoration-underline text-center bg-warning rounded-bottom">
+  Survey - 2023 (Panegaon)
+</h1>
+
+<div class="d-flex justify-content-center align-items-center mb-5">
+  <h2 class="text-info me-3">Number of Houses: <%= house %></h2>
+
+  <form class="d-flex">
+    <input class="form-control me-2" type="text" placeholder="Search" aria-label="Search" name="search">
+    <button class="btn btn-success" type="submit">Search</button>
+  </form>
+</div>
+
+<div class="container">
+  <table class="table table-hover table-dark table-bordered border-danger text-center">
+    <thead class="table-dark border-2 border-danger">
+      <tr>
+        <th scope="col">Family ID</th>
+        <th scope="col">Sr. No.</th>
+        <th scope="col">Head of Family</th>
+        <th scope="col">Age</th>
+        <th scope="col">Gender</th>
+        <th scope="col">Mobile No.</th>
+        <th scope="col">Action</th>
+      </tr>
+    </thead>
+    <tbody>
+      <% var i = 1; %>
+      <% result.forEach((item) => { %>
+      <tr>
+        <td><%= item.familyId %></td>
+        <td><%= i++ %></td>
+        <td class="text-start">
+          <a href="/admin/editSurvey/<%= item.familyId %>" class="text-decoration-none text-white text-capitalize"><%= item.fullName %></a>
+        </td>
+        <td><%= item.age %></td>
+        <td><%= item.gender %></td>
+        <td><%= item.mobileNo %></td>
+        <td>
+          <a href="/admin/editSurvey/<%= item.familyId %>" class="text-decoration-none text-white">Edit</a>
+        </td>
+      </tr>
+      <% }) %>
+      <tr>
+        <td colspan="2" class="bg-transparent"></td>
+        <th colspan="2" class="border-3 border-primary">Total Populations: <span class="p-2"><%= count %></span></th>
+        <td colspan="2" class="bg-transparent"></td>
+      </tr>
+    </tbody>
+  </table>
+</div>
+
+<div class="bg-black pb-1 w-50 mx-auto rounded-5 text-center">
+  <a href="/admin/form" class="text-decoration-none">
+    <h1 style="color: rgb(0, 255, 106); font-size: 6rem; margin-top: 10vh;">Add Data</h1>
+    <p style="color: rgb(0, 255, 106); font-size: 10rem;">+</p>
+  </a>
+</div>
+
+<%- include("../layouts/footer.ejs") %>

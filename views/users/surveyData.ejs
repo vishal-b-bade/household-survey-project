@@ -1,0 +1,114 @@
+<!-- <%- include("../layouts/header.ejs") %>
+<%- include("../layouts/navbar.ejs") %>
+
+<form>
+  <h1
+    class="display-1 col-10 mx-auto mt-1 text-decoration-underline mb-3 bg-warning-subtle rounded-bottom text-center"
+  >
+    Survey of Family
+  </h1>
+
+  <table
+    class="table table-hover table-secondary table-striped-columns table-bordered border-white text-center"
+  >
+    <thead class="table-dark border-white">
+      <tr>
+        <th scope="col">Sr.No.</th>
+        <th scope="col">Beneficiary Name</th>
+        <th scope="col">Age</th>
+        <th scope="col">Gender</th>
+        <th scope="col">Relation with Owner</th>
+        <th scope="col">Mobile No.</th>
+        <th scope="col">Abha ID</th>
+        <th scope="col">Ayushman ID</th>
+      </tr>
+    </thead>
+    <tbody>
+      <% var i = 1; %> <% data.forEach((item) => { %>
+      <tr>
+        <th scope="row"><%= i++ %></th>
+        <td class="text-start"><%= item.fullName %></td>
+        <td><%= item.age %></td>
+        <td><%= item.gender %></td>
+        <td><%= item.relation %></td>
+        <td><%= item.mobileNo %></td>
+        <td><%= item.abha %></td>
+        <td><%= item.ayushman %></td>
+      </tr>
+      <% }) %>
+    </tbody>
+  </table>
+</form>
+
+<a
+  style="font-size: 2rem"
+  class="icon-link text-success ms-3 text-decoration-none"
+  href="/user/data"
+>
+  <svg
+    xmlns="http://www.w3.org/2000/svg"
+    width="16"
+    height="16"
+    fill="currentColor"
+    class="bi bi-arrow-left"
+    viewBox="0 0 16 16"
+  >
+    <path
+      fill-rule="evenodd"
+      d="M15 8a.5.5 0 0 0-.5-.5H2.707l3.147-3.146a.5.5 0 1 0-.708-.708l-4 4a.5.5 0 0 0 0 .708l4 4a.5.5 0 0 0 .708-.708L2.707 8.5H14.5A.5.5 0 0 0 15 8z"
+    />
+  </svg>
+  Back
+</a>
+
+<%- include("../layouts/footer.ejs") %> -->
+
+
+<%- include("../layouts/header.ejs") %>
+<%- include("../layouts/navbar.ejs") %>
+
+<div class="container mt-5">
+  <h1 class="display-1 text-decoration-underline mb-3 bg-warning text-center rounded-bottom">Survey of Family</h1>
+
+  <div class="table-responsive">
+    <table class="table table-hover table-secondary table-striped table-bordered text-center">
+      <thead class="table-dark">
+        <tr>
+          <th scope="col">Sr.No.</th>
+          <th scope="col">Beneficiary Name</th>
+          <th scope="col">Age</th>
+          <th scope="col">Gender</th>
+          <th scope="col">Relation with Owner</th>
+          <th scope="col">Mobile No.</th>
+          <th scope="col">Abha ID</th>
+          <th scope="col">Ayushman ID</th>
+        </tr>
+      </thead>
+      <tbody>
+        <% var i = 1; %> <% data.forEach((item) => { %>
+        <tr>
+          <td><%= i++ %></td>
+          <td class="text-start"><%= item.fullName %></td>
+          <td><%= item.age %></td>
+          <td><%= item.gender %></td>
+          <td><%= item.relation %></td>
+          <td><%= item.mobileNo %></td>
+          <td><%= item.abha %></td>
+          <td><%= item.ayushman %></td>
+        </tr>
+        <% }) %>
+      </tbody>
+    </table>
+  </div>
+</div>
+
+<div class="container mt-4">
+  <a href="/user/data" class="btn btn-success ms-3 text-decoration-none">
+    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-arrow-left" viewBox="0 0 16 16">
+      <path fill-rule="evenodd" d="M15 8a.5.5 0 0 0-.5-.5H2.707l3.147-3.146a.5.5 0 1 0-.708-.708l-4 4a.5.5 0 0 0 0 .708l4 4a.5.5 0 0 0 .708-.708L2.707 8.5H14.5A.5.5 0 0 0 15 8z"/>
+    </svg>
+    Back
+  </a>
+</div>
+
+<%- include("../layouts/footer.ejs") %>

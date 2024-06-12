@@ -1,0 +1,163 @@
+<!-- <%- include("../layouts/header.ejs") %>
+<%- include("../layouts/navbar.ejs") %>
+
+<h1
+  class="display-1 col-10 mx-auto mt-1 mb-3 pb-2 text-decoration-underline bg-warning-subtle rounded-bottom text-center"
+>
+  Survey - 2023 ( Panegaon )
+</h1>
+
+<div class="d-flex justify-content-evenly align-items-end">
+  <h1 class="text-warning">Number of Houses : <%= house %></h1>
+</div>
+
+<form>
+  <table
+    class="col-10 table table-hover table-secondary table-striped-columns table-bordered border-white text-center"
+  >
+    <thead class="table-dark border-white">
+      <tr>
+        <th scope="col">House No.</th>
+        <th scope="col">Head of Family</th>
+        <th scope="col">Age</th>
+        <th scope="col">Gender</th>
+        <th scope="col">Mobile No.</th>
+      </tr>
+    </thead>
+    <tbody>
+      <% result.forEach((item) => { %>
+      <tr>
+        <th scope="row"><%= item.familyId %></th>
+        <td class="text-start">
+          <a
+            href="/user/surveydata/<%= item.familyId %>"
+            class="text-decoration-none text-dark pointer-event text-capitalize"
+            ><%= item.fullName %></a
+          >
+        </td>
+        <td><%= item.age %></td>
+        <td><%= item.gender %></td>
+        <td><%= item.mobileNo %></td>
+      </tr>
+      <% }) %>
+      <tr>
+        <td colspan="4" class="bg-transparent"></td>
+        <th class="border-3 border-black">
+          Total : <span class="p-2"><%= count %></span>
+        </th>
+        <td class="bg-transparent"></td>
+      </tr>
+    </tbody>
+  </table>
+</form>
+
+<a href="?page=1">First</a>
+<% for(let j = 1; j <= totalPages; j++ ){ %>
+<a href="?page=<%= j %>"><%= j %></a>
+<% } %>
+<a href="?page=<%= totalPages %>">Last</a>
+
+<div class="bg-black pb-1 w-50 mx-auto rounded-5">
+  <a href="/user/form" class="text-decoration-none">
+    <h1
+      style="
+        color: rgb(0, 72, 255);
+        margin-top: 10vh;
+        font-size: 6rem;
+        width: 100%;
+        height: 10vh;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        cursor: pointer;
+      "
+    >
+      Add Data
+    </h1>
+    <p
+      style="
+        color: rgb(0, 72, 255);
+        font-size: 10rem;
+        width: 100%;
+        height: 15vh;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+      "
+    >
+      +
+    </p>
+  </a>
+</div>
+
+<%- include("../layouts/footer.ejs") %> -->
+
+
+<%- include("../layouts/header.ejs") %>
+<%- include("../layouts/navbar.ejs") %>
+
+<h1 class="display-1 col-10 mx-auto mt-1 mb-3 pb-2 text-decoration-underline bg-warning-subtle rounded-bottom text-center">
+  Survey - 2023 (Panegaon)
+</h1>
+
+<div class="d-flex justify-content-evenly align-items-end">
+  <h1 class="text-warning">Number of Houses: <%= house %></h1>
+</div>
+
+<div class="container mt-4">
+  <table class="table table-hover table-striped">
+    <thead class="table-dark">
+      <tr>
+        <th scope="col">House No.</th>
+        <th scope="col">Head of Family</th>
+        <th scope="col">Age</th>
+        <th scope="col">Gender</th>
+        <th scope="col">Mobile No.</th>
+      </tr>
+    </thead>
+    <tbody>
+      <% result.forEach((item) => { %>
+      <tr>
+        <th scope="row"><%= item.familyId %></th>
+        <td class="text-capitalize"><a href="/user/surveydata/<%= item.familyId %>" class="text-decoration-none text-dark"><%= item.fullName %></a></td>
+        <td><%= item.age %></td>
+        <td><%= item.gender %></td>
+        <td><%= item.mobileNo %></td>
+      </tr>
+      <% }) %>
+      <tr>
+        <td colspan="4"></td>
+        <th class="table-secondary border-dark" colspan="2">Total: <%= count %></th>
+      </tr>
+    </tbody>
+  </table>
+</div>
+
+<nav class="mt-4" aria-label="Page navigation">
+  <ul class="pagination justify-content-center">
+    <li class="page-item"><a class="page-link" href="?page=1">First</a></li>
+    <% for(let j = 1; j <= totalPages; j++ ){ %>
+    <li class="page-item"><a class="page-link" href="?page=<%= j %>"><%= j %></a></li>
+    <% } %>
+    <li class="page-item"><a class="page-link" href="?page=<%= totalPages %>">Last</a></li>
+  </ul>
+</nav>
+
+<div class="container mt-4">
+  <div class="row">
+    <div class="col-12 col-md-6 mx-auto">
+      <div class="card bg-dark text-white">
+        <a href="/user/form" class="text-decoration-none">
+          <div class="card-body d-flex justify-content-center align-items-center">
+            <h1 class="m-0 text-primary">Add Data</h1>
+          </div>
+          <div class="card-footer text-center">
+            <p class="m-0 text-primary">+</p>
+          </div>
+        </a>
+      </div>
+    </div>
+  </div>
+</div>
+
+<%- include("../layouts/footer.ejs") %>
