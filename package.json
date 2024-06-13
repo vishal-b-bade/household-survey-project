@@ -3,9 +3,6 @@
   "version": "1.0.0",
   "description": "This app or website is create to store village survey in mongodb using HTML, CSS, JS, NodeJS, ExpressJS, MongoDB, EJS etc.",
   "main": "app.js",
-  "engines": {
-    "node": "14.x*"
-  },
   "scripts": {
     "dev": "nodemon app.js",
     "start": "node app.js",
